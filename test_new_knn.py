@@ -148,10 +148,10 @@ def test_s3_model(knn_classifier,s3_path, test_image, model_name, actual_label, 
 
 
 s3_path = "employees/face_id_models/"
-model_name = "00001.joblib"
-test_image_path = r"C:\Users\arvin\OneDrive\Desktop\MobileNetV2\database\training\sairam\46.jpg"
-actual_label = "00013"
-parquet_filename = "predictions.parquet"
+model_name = ""
+test_image_path = r""
+actual_label = ""
+parquet_filename = ""
 
 # Open and resize the image using PIL
 target = (256, 256)
@@ -163,25 +163,4 @@ knn_classifier = fetch_s3_model(s3_path, model_name)
 test_s3_model(knn_classifier,s3_path, pil_image, model_name, actual_label, parquet_filename)
 
 
-#%%
-from PIL import Image
-import face_recognition, joblib 
-import numpy as np
-from io import BytesIO
-from pathlib import Path
-import sys
-import logging
-from datetime import datetime
-import joblib
-import pandas as pd
-import matplotlib.pyplot as plt
-test_image_path = r"C:\Users\arvin\OneDrive\Desktop\MobileNetV2\database\training\sairam\46.jpg"
 
-# Open and resize the image using PIL
-target = (256, 256)
-pil_image = Image.open(test_image_path).resize(target)
-
-# Display the resized image
-pil_image.show()
-
-# %%
