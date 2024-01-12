@@ -86,7 +86,7 @@ def train_s3_images_using_knn(s3_model_path, model_file_name,n_neighbors):
 
     return bugs
 
-n_neighbors = 3
+n_neighbors = #enter an integer ranging from 2 to 6 depending upon the dataset
 s3_model_path = "employees/face_id_models/"
-model_file_name = "00001.joblib"
+model_file_name = ""
 bugs = train_s3_images_using_knn( s3_model_path, model_file_name,n_neighbors)
